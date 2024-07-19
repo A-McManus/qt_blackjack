@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GameScreen</class>
+ <widget class="QDialog" name="GameScreen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1479</width>
+    <height>894</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GameScreen</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <widget class="QTextEdit" name="Dealer_Hand">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>10</y>
+     <width>961</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25 italic 36pt &quot;Ubuntu&quot;;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="Player_Hand">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>370</y>
+     <width>961</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25 italic 36pt &quot;Ubuntu&quot;;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="Dealer">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>251</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:48pt; color:#c21c1f;&quot;&gt;DEALER&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="Player">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>410</y>
+     <width>251</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:48pt; color:#12bc34;&quot;&gt;PLAYER&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Play">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>610</y>
+     <width>191</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25 italic 20pt &quot;Ubuntu&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Play</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Hit">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>610</y>
+     <width>171</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25 italic 20pt &quot;Ubuntu&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Hit</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Stand">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>610</y>
+     <width>181</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25 italic 20pt &quot;Ubuntu&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Stand</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="DoubleDown">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>610</y>
+     <width>171</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25 italic 20pt &quot;Ubuntu&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Double Down</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="Log">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>230</y>
+     <width>871</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Ubuntu&quot;;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:14pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Press play to begin&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="Bet">
+   <property name="geometry">
+    <rect>
+     <x>1060</x>
+     <y>740</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25 italic 14pt &quot;Ubuntu&quot;;</string>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>500</number>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="plainTextEdit">
+   <property name="geometry">
+    <rect>
+     <x>1060</x>
+     <y>660</y>
+     <width>131</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 12pt &quot;Ubuntu&quot;;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::VLine</enum>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="plainText">
+    <string>Bet</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="plainTextEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>660</y>
+     <width>141</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25 italic 11pt &quot;Ubuntu&quot;;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="plainText">
+    <string>Money</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="Money">
+   <property name="geometry">
+    <rect>
+     <x>1220</x>
+     <y>740</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25 italic 16pt &quot;Ubuntu&quot;;</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="maximum">
+    <number>5000</number>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Restart">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>770</y>
+     <width>191</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25 italic 14pt &quot;Ubuntu&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Restart</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setBet10">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>790</y>
+     <width>90</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bet:10</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setbet25">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>790</y>
+     <width>90</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bet:25</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setBet50">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>790</y>
+     <width>90</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bet:50</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setBetMax">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>770</y>
+     <width>141</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bet:Max</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setBet5">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>790</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bet:5</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>Play</sender>
+   <signal>clicked()</signal>
+   <receiver>GameScreen</receiver>
+   <slot>play()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>185</x>
+     <y>525</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>507</x>
+     <y>318</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Hit</sender>
+   <signal>clicked()</signal>
+   <receiver>GameScreen</receiver>
+   <slot>hit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>410</x>
+     <y>525</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>507</x>
+     <y>318</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Stand</sender>
+   <signal>clicked()</signal>
+   <receiver>GameScreen</receiver>
+   <slot>stand()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>525</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>507</x>
+     <y>318</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DoubleDown</sender>
+   <signal>clicked()</signal>
+   <receiver>GameScreen</receiver>
+   <slot>doubleDown()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>820</x>
+     <y>475</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>648</x>
+     <y>285</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Restart</sender>
+   <signal>clicked()</signal>
+   <receiver>GameScreen</receiver>
+   <slot>restart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>645</x>
+     <y>765</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>664</x>
+     <y>426</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>setBet5</sender>
+   <signal>clicked()</signal>
+   <receiver>GameScreen</receiver>
+   <slot>setBet5()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1030</x>
+     <y>675</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>664</x>
+     <y>426</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>setBet10</sender>
+   <signal>clicked()</signal>
+   <receiver>GameScreen</receiver>
+   <slot>setBet10()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1164</x>
+     <y>673</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>664</x>
+     <y>426</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>setbet25</sender>
+   <signal>clicked()</signal>
+   <receiver>GameScreen</receiver>
+   <slot>setBet25()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1034</x>
+     <y>733</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>664</x>
+     <y>426</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>setBet50</sender>
+   <signal>clicked()</signal>
+   <receiver>GameScreen</receiver>
+   <slot>setBet50()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1164</x>
+     <y>733</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>664</x>
+     <y>426</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>setBetMax</sender>
+   <signal>clicked()</signal>
+   <receiver>GameScreen</receiver>
+   <slot>setBetMax()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1104</x>
+     <y>793</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>664</x>
+     <y>426</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>play()</slot>
+  <slot>hit()</slot>
+  <slot>stand()</slot>
+  <slot>doubleDown()</slot>
+  <slot>restart()</slot>
+  <slot>setBet5()</slot>
+  <slot>setBet10()</slot>
+  <slot>setBet25()</slot>
+  <slot>setBet50()</slot>
+  <slot>setBetMax()</slot>
+ </slots>
+</ui>
