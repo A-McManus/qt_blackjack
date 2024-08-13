@@ -46,25 +46,30 @@ public:
     {
         if (GameScreen->objectName().isEmpty())
             GameScreen->setObjectName(QString::fromUtf8("GameScreen"));
-        GameScreen->resize(1479, 894);
+        GameScreen->resize(1479, 848);
         GameScreen->setAutoFillBackground(false);
+        GameScreen->setStyleSheet(QString::fromUtf8("background:rgb(0, 85, 0);"));
         Dealer_Hand = new QTextEdit(GameScreen);
         Dealer_Hand->setObjectName(QString::fromUtf8("Dealer_Hand"));
         Dealer_Hand->setGeometry(QRect(300, 10, 961, 171));
-        Dealer_Hand->setStyleSheet(QString::fromUtf8("font: 25 italic 36pt \"Ubuntu\";"));
+        Dealer_Hand->setStyleSheet(QString::fromUtf8("font: 25 italic 36pt \"Ubuntu\";\n"
+"color:rgb(255, 255, 255);"));
         Dealer_Hand->setReadOnly(true);
         Player_Hand = new QTextEdit(GameScreen);
         Player_Hand->setObjectName(QString::fromUtf8("Player_Hand"));
         Player_Hand->setGeometry(QRect(300, 370, 961, 171));
-        Player_Hand->setStyleSheet(QString::fromUtf8("font: 25 italic 36pt \"Ubuntu\";"));
+        Player_Hand->setStyleSheet(QString::fromUtf8("font: 25 italic 36pt \"Ubuntu\";\n"
+"color:rgb(255, 255, 255);"));
         Player_Hand->setReadOnly(true);
         Dealer = new QTextEdit(GameScreen);
         Dealer->setObjectName(QString::fromUtf8("Dealer"));
         Dealer->setGeometry(QRect(10, 50, 251, 91));
+        Dealer->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255);"));
         Dealer->setReadOnly(true);
         Player = new QTextEdit(GameScreen);
         Player->setObjectName(QString::fromUtf8("Player"));
         Player->setGeometry(QRect(20, 410, 251, 91));
+        Player->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255);"));
         Player->setReadOnly(true);
         Play = new QPushButton(GameScreen);
         Play->setObjectName(QString::fromUtf8("Play"));
@@ -85,33 +90,37 @@ public:
         Log = new QTextEdit(GameScreen);
         Log->setObjectName(QString::fromUtf8("Log"));
         Log->setGeometry(QRect(340, 230, 871, 101));
-        Log->setStyleSheet(QString::fromUtf8("font: 14pt \"Ubuntu\";"));
+        Log->setStyleSheet(QString::fromUtf8("font: 14pt \"Ubuntu\";\n"
+"background: rgb(255, 255, 255);"));
         Log->setReadOnly(true);
         Bet = new QSpinBox(GameScreen);
         Bet->setObjectName(QString::fromUtf8("Bet"));
         Bet->setGeometry(QRect(1060, 740, 131, 41));
-        Bet->setStyleSheet(QString::fromUtf8("font: 25 italic 14pt \"Ubuntu\";"));
+        Bet->setStyleSheet(QString::fromUtf8("font: 25 italic 14pt \"Ubuntu\";\n"
+"background: rgb(255, 255, 255);"));
         Bet->setMinimum(1);
         Bet->setMaximum(500);
         plainTextEdit = new QPlainTextEdit(GameScreen);
         plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
         plainTextEdit->setGeometry(QRect(1060, 660, 131, 71));
         plainTextEdit->setAutoFillBackground(false);
-        plainTextEdit->setStyleSheet(QString::fromUtf8("\n"
+        plainTextEdit->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255);\n"
 "font: 12pt \"Ubuntu\";"));
         plainTextEdit->setFrameShape(QFrame::VLine);
         plainTextEdit->setReadOnly(true);
         plainTextEdit_2 = new QPlainTextEdit(GameScreen);
         plainTextEdit_2->setObjectName(QString::fromUtf8("plainTextEdit_2"));
         plainTextEdit_2->setGeometry(QRect(1220, 660, 141, 61));
-        plainTextEdit_2->setStyleSheet(QString::fromUtf8("font: 25 italic 11pt \"Ubuntu\";"));
+        plainTextEdit_2->setStyleSheet(QString::fromUtf8("font: 25 italic 11pt \"Ubuntu\";\n"
+"background: rgb(255, 255, 255);"));
         plainTextEdit_2->setReadOnly(true);
         Money = new QSpinBox(GameScreen);
         Money->setObjectName(QString::fromUtf8("Money"));
         Money->setGeometry(QRect(1220, 740, 141, 41));
-        Money->setStyleSheet(QString::fromUtf8("font: 25 italic 16pt \"Ubuntu\";"));
+        Money->setStyleSheet(QString::fromUtf8("font: 25 italic 16pt \"Ubuntu\";\n"
+"background: rgb(255, 255, 255);"));
         Money->setReadOnly(true);
-        Money->setMaximum(5000);
+        Money->setMaximum(999999999);
         Restart = new QPushButton(GameScreen);
         Restart->setObjectName(QString::fromUtf8("Restart"));
         Restart->setGeometry(QRect(50, 770, 191, 71));

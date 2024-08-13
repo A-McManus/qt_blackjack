@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1479</width>
-    <height>894</height>
+    <height>848</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,6 +15,9 @@
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(0, 85, 0);</string>
   </property>
   <widget class="QTextEdit" name="Dealer_Hand">
    <property name="geometry">
@@ -26,7 +29,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 25 italic 36pt &quot;Ubuntu&quot;;</string>
+    <string notr="true">font: 25 italic 36pt &quot;Ubuntu&quot;;
+color:rgb(255, 255, 255);</string>
    </property>
    <property name="readOnly">
     <bool>true</bool>
@@ -42,7 +46,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 25 italic 36pt &quot;Ubuntu&quot;;</string>
+    <string notr="true">font: 25 italic 36pt &quot;Ubuntu&quot;;
+color:rgb(255, 255, 255);</string>
    </property>
    <property name="readOnly">
     <bool>true</bool>
@@ -56,6 +61,9 @@
      <width>251</width>
      <height>91</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: rgb(255, 255, 255);</string>
    </property>
    <property name="readOnly">
     <bool>true</bool>
@@ -76,6 +84,9 @@ p, li { white-space: pre-wrap; }
      <width>251</width>
      <height>91</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: rgb(255, 255, 255);</string>
    </property>
    <property name="readOnly">
     <bool>true</bool>
@@ -162,7 +173,8 @@ p, li { white-space: pre-wrap; }
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 14pt &quot;Ubuntu&quot;;</string>
+    <string notr="true">font: 14pt &quot;Ubuntu&quot;;
+background: rgb(255, 255, 255);</string>
    </property>
    <property name="readOnly">
     <bool>true</bool>
@@ -185,7 +197,8 @@ p, li { white-space: pre-wrap; }
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 25 italic 14pt &quot;Ubuntu&quot;;</string>
+    <string notr="true">font: 25 italic 14pt &quot;Ubuntu&quot;;
+background: rgb(255, 255, 255);</string>
    </property>
    <property name="minimum">
     <number>1</number>
@@ -207,7 +220,7 @@ p, li { white-space: pre-wrap; }
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">
+    <string notr="true">background: rgb(255, 255, 255);
 font: 12pt &quot;Ubuntu&quot;;</string>
    </property>
    <property name="frameShape">
@@ -230,7 +243,8 @@ font: 12pt &quot;Ubuntu&quot;;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 25 italic 11pt &quot;Ubuntu&quot;;</string>
+    <string notr="true">font: 25 italic 11pt &quot;Ubuntu&quot;;
+background: rgb(255, 255, 255);</string>
    </property>
    <property name="readOnly">
     <bool>true</bool>
@@ -249,13 +263,14 @@ font: 12pt &quot;Ubuntu&quot;;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 25 italic 16pt &quot;Ubuntu&quot;;</string>
+    <string notr="true">font: 25 italic 16pt &quot;Ubuntu&quot;;
+background: rgb(255, 255, 255);</string>
    </property>
    <property name="readOnly">
     <bool>true</bool>
    </property>
    <property name="maximum">
-    <number>5000</number>
+    <number>999999999</number>
    </property>
   </widget>
   <widget class="QPushButton" name="Restart">

@@ -7,16 +7,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/BlackJack.cpp</file>
             <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/Deck.h</file>
+            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/StartScreen.cpp</file>
+            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/RouletteWheel.h</file>
+            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/StraightUpBet.h</file>
+            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/Test.h</file>
+            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/TableRoulette.h</file>
+            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/RouletteWheel.cpp</file>
             <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/PlayerHand.cpp</file>
-            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/PlayerHand.h</file>
-            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/GameScreen.h</file>
-            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/Card.cpp</file>
-            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/Card.h</file>
-            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/main.cpp</file>
-            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/GameScreen.cpp</file>
-            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/BlackJack.h</file>
+            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/RouletteTable.h</file>
+            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/Test.cpp</file>
+            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/TableRoulette.cpp</file>
+            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/RouletteTable.cpp</file>
+            <file>file:/home/etudiant/NetBeansProjects/QT_Blackjack/StartScreen.h</file>
         </group>
     </open-files>
 </project-private>

@@ -13,8 +13,9 @@
 #ifndef _STARTSCREEN_H
 #define _STARTSCREEN_H
 
+#include "Test.h"
 #include "ui_StartScreen.h"
-#include "GameScreen.h"
+#include"RouletteWheel.h"
 
 class StartScreen : public QDialog
 {
@@ -25,11 +26,11 @@ public:
   
   public slots:
     void play();
-    
+    void playRoulette();
 private:
   Ui::StartScreen widget;
   GameScreen Game;
-  
+  RouletteWheel aRoulette;
 };
 
 #endif /* _STARTSCREEN_H */

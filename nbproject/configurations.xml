@@ -12,13 +12,19 @@
       <itemPath>GameScreen.h</itemPath>
       <itemPath>Player.h</itemPath>
       <itemPath>PlayerHand.h</itemPath>
+      <itemPath>RouletteTable.h</itemPath>
+      <itemPath>RouletteWheel.h</itemPath>
       <itemPath>StartScreen.h</itemPath>
+      <itemPath>StraightUpBet.h</itemPath>
       <itemPath>Table.h</itemPath>
+      <itemPath>TableRoulette.h</itemPath>
+      <itemPath>Test.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
       <itemPath>GameScreen.ui</itemPath>
+      <itemPath>RouletteWheel.ui</itemPath>
       <itemPath>StartScreen.ui</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
@@ -32,8 +38,13 @@
       <itemPath>GameScreen.cpp</itemPath>
       <itemPath>Player.cpp</itemPath>
       <itemPath>PlayerHand.cpp</itemPath>
+      <itemPath>RouletteTable.cpp</itemPath>
+      <itemPath>RouletteWheel.cpp</itemPath>
       <itemPath>StartScreen.cpp</itemPath>
+      <itemPath>StraightUpBet.cpp</itemPath>
       <itemPath>Table.cpp</itemPath>
+      <itemPath>TableRoulette.cpp</itemPath>
+      <itemPath>Test.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -95,15 +106,37 @@
       </item>
       <item path="PlayerHand.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="RouletteTable.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RouletteTable.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="RouletteWheel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RouletteWheel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="RouletteWheel.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="StartScreen.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="StartScreen.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="StartScreen.ui" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="StraightUpBet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StraightUpBet.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Table.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Table.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TableRoulette.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TableRoulette.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Test.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -166,15 +199,37 @@
       </item>
       <item path="PlayerHand.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="RouletteTable.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RouletteTable.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="RouletteWheel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RouletteWheel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="RouletteWheel.ui" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="StartScreen.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="StartScreen.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="StartScreen.ui" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="StraightUpBet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StraightUpBet.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Table.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Table.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TableRoulette.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TableRoulette.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Test.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

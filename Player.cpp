@@ -30,7 +30,7 @@ void Player:: changeMoney(int amount)
   money += amount;
 }
 
-void Player::reset()
+void Player::reset() // sets money t0 50
 {
   money = 50;
 }

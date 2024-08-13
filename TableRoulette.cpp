@@ -4,26 +4,17 @@
  */
 
 /*
- * File:   StartScreen.cpp
+ * File:   TableRoulette.cpp
  * Author: etudiant
  *
- * Created on June 28, 2024, 8:31 p.m.
+ * Created on August 1, 2024, 5:12 p.m.
  */
 
-#include "StartScreen.h"
+#include "TableRoulette.h"
 
-StartScreen::StartScreen ()
+TableRoulette::TableRoulette ()
 {
   widget.setupUi (this);
-  
 }
 
-void StartScreen::play()
-{
-  Game.show();
-}
-void StartScreen::playRoulette()
-{
-  aRoulette.show();
-}
-StartScreen::~StartScreen () { }
+TableRoulette::~TableRoulette () { }

@@ -60,10 +60,18 @@ SOURCES       = BlackJack.cpp \
 		GameScreen.cpp \
 		Player.cpp \
 		PlayerHand.cpp \
+		RouletteTable.cpp \
+		RouletteWheel.cpp \
 		StartScreen.cpp \
+		StraightUpBet.cpp \
 		Table.cpp \
+		TableRoulette.cpp \
+		Test.cpp \
 		main.cpp moc_GameScreen.cpp \
-		moc_StartScreen.cpp
+		moc_RouletteWheel.cpp \
+		moc_StartScreen.cpp \
+		moc_TableRoulette.cpp \
+		moc_Test.cpp
 OBJECTS       = build/Debug/GNU-Linux/BlackJack.o \
 		build/Debug/GNU-Linux/Card.o \
 		build/Debug/GNU-Linux/ContratException.o \
@@ -72,11 +80,19 @@ OBJECTS       = build/Debug/GNU-Linux/BlackJack.o \
 		build/Debug/GNU-Linux/GameScreen.o \
 		build/Debug/GNU-Linux/Player.o \
 		build/Debug/GNU-Linux/PlayerHand.o \
+		build/Debug/GNU-Linux/RouletteTable.o \
+		build/Debug/GNU-Linux/RouletteWheel.o \
 		build/Debug/GNU-Linux/StartScreen.o \
+		build/Debug/GNU-Linux/StraightUpBet.o \
 		build/Debug/GNU-Linux/Table.o \
+		build/Debug/GNU-Linux/TableRoulette.o \
+		build/Debug/GNU-Linux/Test.o \
 		build/Debug/GNU-Linux/main.o \
 		build/Debug/GNU-Linux/moc_GameScreen.o \
-		build/Debug/GNU-Linux/moc_StartScreen.o
+		build/Debug/GNU-Linux/moc_RouletteWheel.o \
+		build/Debug/GNU-Linux/moc_StartScreen.o \
+		build/Debug/GNU-Linux/moc_TableRoulette.o \
+		build/Debug/GNU-Linux/moc_Test.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -162,8 +178,13 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		GameScreen.h \
 		Player.h \
 		PlayerHand.h \
+		RouletteTable.h \
+		RouletteWheel.h \
 		StartScreen.h \
-		Table.h BlackJack.cpp \
+		StraightUpBet.h \
+		Table.h \
+		TableRoulette.h \
+		Test.h BlackJack.cpp \
 		Card.cpp \
 		ContratException.cpp \
 		DealerHand.cpp \
@@ -171,8 +192,13 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		GameScreen.cpp \
 		Player.cpp \
 		PlayerHand.cpp \
+		RouletteTable.cpp \
+		RouletteWheel.cpp \
 		StartScreen.cpp \
+		StraightUpBet.cpp \
 		Table.cpp \
+		TableRoulette.cpp \
+		Test.cpp \
 		main.cpp
 QMAKE_TARGET  = QT_Blackjack
 DESTDIR       = dist/Debug/GNU-Linux/
@@ -182,7 +208,7 @@ TARGET        = dist/Debug/GNU-Linux/QT_Blackjack
 first: all
 ####### Build rules
 
-dist/Debug/GNU-Linux/QT_Blackjack: ui_GameScreen.h ui_StartScreen.h $(OBJECTS)  
+dist/Debug/GNU-Linux/QT_Blackjack: ui_GameScreen.h ui_RouletteWheel.h ui_StartScreen.h $(OBJECTS)  
 	@test -d dist/Debug/GNU-Linux/ || mkdir -p dist/Debug/GNU-Linux/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -358,9 +384,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents BlackJack.h Card.h ContratException.h DealerHand.h Deck.h GameScreen.h Player.h PlayerHand.h StartScreen.h Table.h $(DISTDIR)/
-	$(COPY_FILE) --parents BlackJack.cpp Card.cpp ContratException.cpp DealerHand.cpp Deck.cpp GameScreen.cpp Player.cpp PlayerHand.cpp StartScreen.cpp Table.cpp main.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents GameScreen.ui StartScreen.ui $(DISTDIR)/
+	$(COPY_FILE) --parents BlackJack.h Card.h ContratException.h DealerHand.h Deck.h GameScreen.h Player.h PlayerHand.h RouletteTable.h RouletteWheel.h StartScreen.h StraightUpBet.h Table.h TableRoulette.h Test.h $(DISTDIR)/
+	$(COPY_FILE) --parents BlackJack.cpp Card.cpp ContratException.cpp DealerHand.cpp Deck.cpp GameScreen.cpp Player.cpp PlayerHand.cpp RouletteTable.cpp RouletteWheel.cpp StartScreen.cpp StraightUpBet.cpp Table.cpp TableRoulette.cpp Test.cpp main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents GameScreen.ui RouletteWheel.ui StartScreen.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -392,9 +418,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -Wall -Wextra -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_GameScreen.cpp moc_StartScreen.cpp
+compiler_moc_header_make_all: moc_GameScreen.cpp moc_RouletteWheel.cpp moc_StartScreen.cpp moc_TableRoulette.cpp moc_Test.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_GameScreen.cpp moc_StartScreen.cpp
+	-$(DEL_FILE) moc_GameScreen.cpp moc_RouletteWheel.cpp moc_StartScreen.cpp moc_TableRoulette.cpp moc_Test.cpp
 moc_GameScreen.cpp: GameScreen.h \
 		BlackJack.h \
 		DealerHand.h \
@@ -407,8 +433,29 @@ moc_GameScreen.cpp: GameScreen.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/NetBeansProjects/QT_Blackjack/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/NetBeansProjects/QT_Blackjack/nbproject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include GameScreen.h -o moc_GameScreen.cpp
 
+moc_RouletteWheel.cpp: RouletteWheel.h \
+		ui_RouletteWheel.h \
+		RouletteTable.h \
+		StraightUpBet.h \
+		GameScreen.h \
+		BlackJack.h \
+		DealerHand.h \
+		PlayerHand.h \
+		Deck.h \
+		Card.h \
+		ui_GameScreen.h \
+		Player.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/NetBeansProjects/QT_Blackjack/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/NetBeansProjects/QT_Blackjack/nbproject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include RouletteWheel.h -o moc_RouletteWheel.cpp
+
 moc_StartScreen.cpp: StartScreen.h \
+		Test.h \
 		ui_StartScreen.h \
+		RouletteWheel.h \
+		ui_RouletteWheel.h \
+		RouletteTable.h \
+		StraightUpBet.h \
 		GameScreen.h \
 		BlackJack.h \
 		DealerHand.h \
@@ -421,16 +468,31 @@ moc_StartScreen.cpp: StartScreen.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/NetBeansProjects/QT_Blackjack/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/NetBeansProjects/QT_Blackjack/nbproject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include StartScreen.h -o moc_StartScreen.cpp
 
+moc_TableRoulette.cpp: TableRoulette.h \
+		ui_TableRoulette.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/NetBeansProjects/QT_Blackjack/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/NetBeansProjects/QT_Blackjack/nbproject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include TableRoulette.h -o moc_TableRoulette.cpp
+
+moc_Test.cpp: Test.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/NetBeansProjects/QT_Blackjack/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/NetBeansProjects/QT_Blackjack/nbproject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include Test.h -o moc_Test.cpp
+
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_GameScreen.h ui_StartScreen.h
+compiler_uic_make_all: ui_GameScreen.h ui_RouletteWheel.h ui_StartScreen.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_GameScreen.h ui_StartScreen.h
+	-$(DEL_FILE) ui_GameScreen.h ui_RouletteWheel.h ui_StartScreen.h
 ui_GameScreen.h: GameScreen.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic GameScreen.ui -o ui_GameScreen.h
+
+ui_RouletteWheel.h: RouletteWheel.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic RouletteWheel.ui -o ui_RouletteWheel.h
 
 ui_StartScreen.h: StartScreen.ui \
 		/usr/lib/qt5/bin/uic
@@ -488,8 +550,39 @@ build/Debug/GNU-Linux/PlayerHand.o: PlayerHand.cpp PlayerHand.h \
 		Card.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/PlayerHand.o PlayerHand.cpp
 
+build/Debug/GNU-Linux/RouletteTable.o: RouletteTable.cpp RouletteTable.h \
+		StraightUpBet.h \
+		GameScreen.h \
+		BlackJack.h \
+		DealerHand.h \
+		PlayerHand.h \
+		Deck.h \
+		Card.h \
+		ui_GameScreen.h \
+		Player.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/RouletteTable.o RouletteTable.cpp
+
+build/Debug/GNU-Linux/RouletteWheel.o: RouletteWheel.cpp RouletteWheel.h \
+		ui_RouletteWheel.h \
+		RouletteTable.h \
+		StraightUpBet.h \
+		GameScreen.h \
+		BlackJack.h \
+		DealerHand.h \
+		PlayerHand.h \
+		Deck.h \
+		Card.h \
+		ui_GameScreen.h \
+		Player.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/RouletteWheel.o RouletteWheel.cpp
+
 build/Debug/GNU-Linux/StartScreen.o: StartScreen.cpp StartScreen.h \
+		Test.h \
 		ui_StartScreen.h \
+		RouletteWheel.h \
+		ui_RouletteWheel.h \
+		RouletteTable.h \
+		StraightUpBet.h \
 		GameScreen.h \
 		BlackJack.h \
 		DealerHand.h \
@@ -500,6 +593,9 @@ build/Debug/GNU-Linux/StartScreen.o: StartScreen.cpp StartScreen.h \
 		Player.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/StartScreen.o StartScreen.cpp
 
+build/Debug/GNU-Linux/StraightUpBet.o: StraightUpBet.cpp StraightUpBet.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/StraightUpBet.o StraightUpBet.cpp
+
 build/Debug/GNU-Linux/Table.o: Table.cpp Table.h \
 		BlackJack.h \
 		DealerHand.h \
@@ -509,8 +605,20 @@ build/Debug/GNU-Linux/Table.o: Table.cpp Table.h \
 		Player.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/Table.o Table.cpp
 
+build/Debug/GNU-Linux/TableRoulette.o: TableRoulette.cpp TableRoulette.h \
+		ui_TableRoulette.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/TableRoulette.o TableRoulette.cpp
+
+build/Debug/GNU-Linux/Test.o: Test.cpp Test.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/Test.o Test.cpp
+
 build/Debug/GNU-Linux/main.o: main.cpp StartScreen.h \
+		Test.h \
 		ui_StartScreen.h \
+		RouletteWheel.h \
+		ui_RouletteWheel.h \
+		RouletteTable.h \
+		StraightUpBet.h \
 		GameScreen.h \
 		BlackJack.h \
 		DealerHand.h \
@@ -524,8 +632,17 @@ build/Debug/GNU-Linux/main.o: main.cpp StartScreen.h \
 build/Debug/GNU-Linux/moc_GameScreen.o: moc_GameScreen.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/moc_GameScreen.o moc_GameScreen.cpp
 
+build/Debug/GNU-Linux/moc_RouletteWheel.o: moc_RouletteWheel.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/moc_RouletteWheel.o moc_RouletteWheel.cpp
+
 build/Debug/GNU-Linux/moc_StartScreen.o: moc_StartScreen.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/moc_StartScreen.o moc_StartScreen.cpp
+
+build/Debug/GNU-Linux/moc_TableRoulette.o: moc_TableRoulette.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/moc_TableRoulette.o moc_TableRoulette.cpp
+
+build/Debug/GNU-Linux/moc_Test.o: moc_Test.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/moc_Test.o moc_Test.cpp
 
 ####### Install
 

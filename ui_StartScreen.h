@@ -23,12 +23,13 @@ public:
     QTextEdit *textEdit;
     QPushButton *START;
     QPushButton *Quit;
+    QPushButton *StartRoulette;
 
     void setupUi(QDialog *StartScreen)
     {
         if (StartScreen->objectName().isEmpty())
             StartScreen->setObjectName(QString::fromUtf8("StartScreen"));
-        StartScreen->resize(1008, 631);
+        StartScreen->resize(1017, 613);
         textEdit = new QTextEdit(StartScreen);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
         textEdit->setGeometry(QRect(33, 20, 931, 151));
@@ -37,17 +38,23 @@ public:
         START = new QPushButton(StartScreen);
         START->setObjectName(QString::fromUtf8("START"));
         START->setGeometry(QRect(390, 227, 211, 101));
-        START->setStyleSheet(QString::fromUtf8("font: 25 italic 28pt \"Ubuntu\";"));
+        START->setStyleSheet(QString::fromUtf8("font: 25 italic 22pt \"Ubuntu\";"));
         Quit = new QPushButton(StartScreen);
         Quit->setObjectName(QString::fromUtf8("Quit"));
         Quit->setGeometry(QRect(390, 380, 211, 111));
         Quit->setStyleSheet(QString::fromUtf8("font: 25 italic 28pt \"Ubuntu\";"));
         Quit->setIconSize(QSize(32, 32));
+        StartRoulette = new QPushButton(StartScreen);
+        StartRoulette->setObjectName(QString::fromUtf8("StartRoulette"));
+        StartRoulette->setGeometry(QRect(630, 230, 211, 101));
+        StartRoulette->setStyleSheet(QString::fromUtf8("font: 25 italic 22pt \"Ubuntu\";"));
 
         retranslateUi(StartScreen);
         QObject::connect(Quit, SIGNAL(clicked()), StartScreen, SLOT(close()));
         QObject::connect(START, SIGNAL(clicked()), StartScreen, SLOT(play()));
         QObject::connect(START, SIGNAL(clicked()), StartScreen, SLOT(close()));
+        QObject::connect(StartRoulette, SIGNAL(clicked()), StartScreen, SLOT(playRoulette()));
+        QObject::connect(StartRoulette, SIGNAL(clicked()), StartScreen, SLOT(close()));
 
         QMetaObject::connectSlotsByName(StartScreen);
     } // setupUi
@@ -60,8 +67,9 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Ubuntu'; font-size:50pt; font-weight:24; font-style:italic;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:72pt; font-weight:600; font-style:normal;\">BLACKJACK</span></p></body></html>", nullptr));
-        START->setText(QCoreApplication::translate("StartScreen", "Play", nullptr));
+        START->setText(QCoreApplication::translate("StartScreen", "Play Blackjack", nullptr));
         Quit->setText(QCoreApplication::translate("StartScreen", "Quit", nullptr));
+        StartRoulette->setText(QCoreApplication::translate("StartScreen", "Play Roulette", nullptr));
     } // retranslateUi
 
 };
